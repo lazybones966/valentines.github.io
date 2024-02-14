@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #ff4d4d;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            background-color: #ff4d4d;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ff3333;
+        }
+
+        #yesButton {
+            transition: all 0.3s ease;
+        }
+
+        #noButton {
+            background-color: #555;
+        }
+
+        #noButton:hover {
+            background-color: #333;
+        }
+
+        #helloKittyGif {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <h1>Will you be my Valentine?</h1>
+    <p>Hey babe</p>
+    <p>meeting u was the sole thing that made the last holidays fun ,and im grafteful for the fact that i met u , so i thought i'd take this chance to officialy make u my gf </p>
+    <p>What do you say?</p>
+    <button id="yesButton" onclick="confirmValentine()">Yes, I'd love to!</button>
+    <button id="noButton" onclick="rejectValentine()">No, sorry</button>
+    
+    <!-- Hello Kitty GIF -->
+    <img id="helloKittyGif" src="https://c.tenor.com/eZDY9hhhIzMAAAAC/tenor.gif" alt="Hello Kitty" width="400">
+</div>
+
+<script>
+    let rejectionCount = 0;
+
+    function confirmValentine() {
+        alert("Yay! Thank you for being my Valentine! 😊");
+        document.getElementById('helloKittyGif').style.display = 'block'; // Show Hello Kitty GIF
+        // You can add additional actions or redirect to another page if needed.
+    }
+
+    function rejectValentine() {
+        rejectionCount++;
+        alert("No worries! If you change your mind, I'll be here. 😊");
+        document.getElementById('yesButton').style.width = '150px'; // Make the "Yes" button bigger
+        document.getElementById('yesButton').textContent = `Are you sure? (${rejectionCount} times)`;
+    }
+</script>
+
+</body>
+</html>
